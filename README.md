@@ -17,19 +17,29 @@ The ETL process is performed in the following Jupyter Notebook:
 - [etl_process.ipynb](etl_process.ipynb)
 
 ### ETL Steps:
-1. **Data Extraction**: Downloading the dataset from Kaggle.
-2. **Data Transformation**: Cleaning, renaming columns, deriving new columns (discount, sale_price, profit), and converting data types.
-3. **Data Loading**: Uploading the transformed data to a PostgreSQL database.
-
-### Configuration
-A `config.ini` file is needed with parameters for database/server credentials:
-[postgresql]
-user = username
-password = password
-host = localhost
-port = 5432 (or what your db port is)
-database = dbname
-
+1. **Data Acquisition and Preprocessing**:
+   - The Kaggle API is used to download the "retail orders" dataset.
+   - The downloaded ZIP file is extracted to obtain the CSV file.
+   - Pandas is used to read the CSV file into a DataFrame and perform data cleaning, such as handling missing values and renaming columns.
+   
+2. **Data Cleaning and Transformation**:
+   - The 'Order Date' column is converted from an object to a date data type.
+   - Null values are handled by replacing them with 'None'.
+   - Column names are converted to lowercase and spaces are replaced with underscores.
+   - New columns 'Discount' and 'Sale Price' are derived.
+   - Unnecessary columns 'Cost Price', 'List Price', and 'Discount Percent' are dropped.
+   
+3. **Data Loading**:
+   - The cleaned data is loaded into a PostgreSQL database using SQLAlchemy.
+   - A `config.ini` file is used to store database credentials:
+     ```
+     [postgresql]
+     user = username
+     password = password
+     host = localhost
+     port = 5432
+     database = dbname
+     ```
 
 ## SQL Analysis
 The SQL queries used for analysis can be found here:
