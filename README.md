@@ -1,6 +1,6 @@
 # Retail Data ETL and Analysis Project
 
-![2019-04-retail](https://github.com/JaiBhatia19/London-Bike-Rides-Dashboard/assets/143343337/d9937302-ae45-4de2-a96d-051ae2829316)
+![photo-1481437156560-3205f6a55735](https://github.com/JaiBhatia19/London-Bike-Rides-Dashboard/assets/143343337/2b0441c4-5a76-4c49-8d68-2cd524be35bf)
 
 ## Project Overview
 End-to-end ETL process for retail order data, including data extraction from Kaggle, transformation and loading into PostgreSQL, and SQL-based analysis to derive business insights.
